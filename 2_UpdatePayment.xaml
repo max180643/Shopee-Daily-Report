@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_2_UpdatePayment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1245,3016" sap2010:WorkflowViewState.IdRef="_2_UpdatePayment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_UpdatePayment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1345,3016" sap2010:WorkflowViewState.IdRef="_2_UpdatePayment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -48,7 +48,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_2_UpdatePayment" sap:VirtualizedContainerService.HintSize="1225,2956" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_2_UpdatePayment" sap:VirtualizedContainerService.HintSize="1325,2956" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="ShopeePayment" />
@@ -59,17 +59,17 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1183,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;ShopeePay&quot;&quot;&quot; + &quot; file&quot;]" />
-    <ui:SelectFile DisplayName="Select File" Filter="CSV files (*.csv)|*.csv;" sap:VirtualizedContainerService.HintSize="1183,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
-    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[ShopeePayment]" Delimitator="Comma" DisplayName="Read CSV from select file" FilePath="[FilePath]" sap:VirtualizedContainerService.HintSize="1183,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
-    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DataStorage]" Delimitator="Comma" DisplayName="Read CSV from &quot;Data.csv&quot;" FilePath="Data.csv" sap:VirtualizedContainerService.HintSize="1183,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ShopeePayment]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1183,2000" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1283,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;ShopeePay&quot;&quot;&quot; + &quot; file&quot;]" />
+    <ui:SelectFile DisplayName="Select File" Filter="CSV files (*.csv)|*.csv;" sap:VirtualizedContainerService.HintSize="1283,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[ShopeePayment]" Delimitator="Comma" DisplayName="Read CSV from select file" FilePath="[FilePath]" sap:VirtualizedContainerService.HintSize="1283,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DataStorage]" Delimitator="Comma" DisplayName="Read CSV from &quot;Data.csv&quot;" FilePath="Data.csv" sap:VirtualizedContainerService.HintSize="1283,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ShopeePayment]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1283,2000" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1133,1852" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1233,1852" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Payer" />
               <Variable x:TypeArguments="x:String" Name="TransferDate" />
@@ -80,7 +80,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[ShopeePayment.Rows.IndexOf(row)&gt;=5 AND (row.Item(1).ToString = &quot;Seller Balance&quot;)]" sap:VirtualizedContainerService.HintSize="1091,1760" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[ShopeePayment.Rows.IndexOf(row)&gt;=5 AND (row.Item(1).ToString = &quot;Seller Balance&quot;)]" sap:VirtualizedContainerService.HintSize="1191,1760" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="946,1612" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
@@ -241,13 +241,16 @@
                   </ui:ForEachRow>
                 </Sequence>
               </If.Then>
+              <If.Else>
+                <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
+              </If.Else>
             </If>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[DataStorage]" Delimitator="Comma" DisplayName="Save data" FilePath="Data.csv" sap:VirtualizedContainerService.HintSize="1183,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Generate payment report" sap:VirtualizedContainerService.HintSize="1183,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="2.1_PaymentReport.xaml">
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[DataStorage]" Delimitator="Comma" DisplayName="Save data" FilePath="Data.csv" sap:VirtualizedContainerService.HintSize="1283,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Generate payment report" sap:VirtualizedContainerService.HintSize="1283,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="2.1_PaymentReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="DataStorage">[DataStorage]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
