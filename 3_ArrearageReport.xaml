@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_3_ArrearageReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="415.2,1279.2" sap2010:WorkflowViewState.IdRef="_3_ArrearageReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_3_ArrearageReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="415.2,1279.2" sap2010:WorkflowViewState.IdRef="_3_ArrearageReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -49,7 +49,7 @@
   <Sequence DisplayName="_3_ArrearageReport" sap:VirtualizedContainerService.HintSize="656,1771.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="today" />
+      <Variable x:TypeArguments="s:DateTime" Name="today" />
       <Variable x:TypeArguments="sd:DataTable" Name="outData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -77,10 +77,10 @@
     </Sequence>
     <Assign DisplayName="Get today (DayOfYear)" sap:VirtualizedContainerService.HintSize="614.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="ui:GenericValue">[today]</OutArgument>
+        <OutArgument x:TypeArguments="s:DateTime">[today]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="ui:GenericValue">[DateTime.Now.DayOfYear]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="614.4,932.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
@@ -91,7 +91,7 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="564.8,784" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Int32" Name="checkSevenDay" />
+              <Variable x:TypeArguments="x:Int64" Name="checkDiffDate" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -100,13 +100,13 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign DisplayName="Assign checkSevenDay" sap:VirtualizedContainerService.HintSize="523.2,60" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">[checkSevenDay]</OutArgument>
+                <OutArgument x:TypeArguments="x:Int64">[checkDiffDate]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">[Math.Abs(Convert.ToDateTime(item(0)).DayOfYear - today)]</InArgument>
+                <InArgument x:TypeArguments="x:Int64">[DateDiff(DateInterval.Day, Convert.ToDateTime(item(0)), today)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[checkSevenDay &gt; 7]" DisplayName="If checkSevenDay &gt; 7" sap:VirtualizedContainerService.HintSize="523.2,591.2" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[checkDiffDate &gt; 7]" DisplayName="If checkSevenDay &gt; 7" sap:VirtualizedContainerService.HintSize="523.2,591.2" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="379.2,441.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
