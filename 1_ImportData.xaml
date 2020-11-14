@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FormatData" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="859,2518" sap2010:WorkflowViewState.IdRef="FormatData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FormatData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>859,2648</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>FormatData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -49,12 +57,11 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Format daily order data and import to shopdata." DisplayName="ImportData" sap:VirtualizedContainerService.HintSize="839,2418" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Format daily order data and import to shopdata." DisplayName="ImportData" sap:VirtualizedContainerService.HintSize="839,2588" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="FormatDailyData" />
       <Variable x:TypeArguments="sd:DataTable" Name="OrderDataTable" />
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
-      <Variable x:TypeArguments="x:String" Name="FilePath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -63,8 +70,19 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[FormatDailyData]" DisplayName="Create &quot;FormatDaily&quot; Data Table" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;วันที่จัดส่ง&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;หมายเลขคำสั่งซื้อ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ชื่อผู้รับ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;หมายเลขโทรศัพท์&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;วันที่สั่งซื้อ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ช่องทางการชำระเงิน&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ราคาขาย&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ค่าคอมมิชชั่น&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ค่าธุรกรรมการชำระเงิน&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ค่าบริการ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ยอดที่ต้องได้รับ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;การจัดส่ง&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;เลขพัสดุ&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ชื่อสินค้า&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ตัวเลือก&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;จำนวน&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ที่อยู่ผู้จัดส่ง&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Shopee_x0020_Pay&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Transfer_x0020_Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Transfer_x0020_Date&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;Order&quot;&quot;&quot; + &quot; file&quot;]" />
-    <ui:SelectFile DisplayName="Select File" Filter="Excel files (*.xlsx, *.xls)|*.xlsx;*.xls" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
+    <ui:CommentOut DisplayName="For Debug" sap:VirtualizedContainerService.HintSize="797,291" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;Order&quot;&quot;&quot; + &quot; file&quot;]" />
+          <ui:SelectFile DisplayName="Select File" Filter="Excel files (*.xlsx, *.xls)|*.xlsx;*.xls" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[OrderDataTable]" DisplayName="Read data from select file" sap:VirtualizedContainerService.HintSize="797,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="orders" WorkbookPath="[FilePath]" />
     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[OrderDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="797,1220" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>

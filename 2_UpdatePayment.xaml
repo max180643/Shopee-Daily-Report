@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_2_UpdatePayment" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1345,3056" sap2010:WorkflowViewState.IdRef="_2_UpdatePayment_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_UpdatePayment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1345,3226</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_2_UpdatePayment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -48,9 +56,8 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_2_UpdatePayment" sap:VirtualizedContainerService.HintSize="1325,2956" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_2_UpdatePayment" sap:VirtualizedContainerService.HintSize="1325,3126" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="FilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="ShopeePayment" />
       <Variable x:TypeArguments="sd:DataTable" Name="DataStorage" />
     </Sequence.Variables>
@@ -59,8 +66,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1283,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;ShopeePay&quot;&quot;&quot; + &quot; file&quot;]" />
-    <ui:SelectFile DisplayName="Select File" Filter="CSV files (*.csv)|*.csv;" sap:VirtualizedContainerService.HintSize="1283,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
+    <ui:CommentOut DisplayName="For Debug" sap:VirtualizedContainerService.HintSize="1283,291" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Select file" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please select &quot; + &quot;&quot;&quot;ShopeePay&quot;&quot;&quot; + &quot; file&quot;]" />
+          <ui:SelectFile DisplayName="Select File" Filter="CSV files (*.csv)|*.csv;" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[FilePath]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[ShopeePayment]" Delimitator="Comma" DisplayName="Read CSV from select file" FilePath="[FilePath]" sap:VirtualizedContainerService.HintSize="1283,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
     <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DataStorage]" Delimitator="Comma" DisplayName="Read CSV from &quot;Data.csv&quot;" FilePath="[Environment.CurrentDirectory + &quot;\Data.csv&quot;]" sap:VirtualizedContainerService.HintSize="1283,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ShopeePayment]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1283,2000" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
