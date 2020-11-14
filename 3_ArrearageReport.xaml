@@ -98,7 +98,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign checkSevenDay" sap:VirtualizedContainerService.HintSize="523.2,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign DisplayName="Assign checkDiffDate" sap:VirtualizedContainerService.HintSize="523.2,60" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int64">[checkDiffDate]</OutArgument>
               </Assign.To>
@@ -106,7 +106,7 @@
                 <InArgument x:TypeArguments="x:Int64">[DateDiff(DateInterval.Day, Convert.ToDateTime(item(0)), today)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[checkDiffDate &gt; 7]" DisplayName="If checkSevenDay &gt; 7" sap:VirtualizedContainerService.HintSize="523.2,591.2" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[checkDiffDate &gt; 7]" DisplayName="If checkDiffDate &gt; 7" sap:VirtualizedContainerService.HintSize="523.2,591.2" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="379.2,441.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
