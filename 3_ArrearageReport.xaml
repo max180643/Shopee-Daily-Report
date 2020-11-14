@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_3_ArrearageReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1204,2441" sap2010:WorkflowViewState.IdRef="_3_ArrearageReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_3_ArrearageReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1204,2818" sap2010:WorkflowViewState.IdRef="_3_ArrearageReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="48">
+    <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -51,13 +51,14 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_3_ArrearageReport" sap:VirtualizedContainerService.HintSize="1184,2341" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_3_ArrearageReport" sap:VirtualizedContainerService.HintSize="1184,2718" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
       <Variable x:TypeArguments="s:DateTime" Name="today" />
       <Variable x:TypeArguments="sd:DataTable" Name="outData" />
       <Variable x:TypeArguments="ui:GenericValue" Name="FileName" />
       <Variable x:TypeArguments="ui:GenericValue" Name="Path" />
+      <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -261,6 +262,12 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
+    <ui:PathExists DisplayName="Path Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="1142,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path + FileName]" PathType="File" />
+    <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="1142,208" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path + FileName]" />
+      </If.Then>
+    </If>
     <ui:WriteRange AddHeaders="False" DataTable="[outData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1142,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="ArrearageReport" StartingCell="A1" WorkbookPath="[Path + FileName]" />
   </Sequence>
 </Activity>
