@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>776,3602.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>776,3675.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_2_1_PaymentReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -36,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,7 +58,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_2_1_PaymentReport" sap:VirtualizedContainerService.HintSize="756,3195.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_2_1_PaymentReport" sap:VirtualizedContainerService.HintSize="756,3575.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Double" Name="SumRevenue" />
       <Variable x:TypeArguments="x:String" Name="TransferDate" />
@@ -68,6 +68,7 @@
       <Variable x:TypeArguments="x:String" Name="FileName" />
       <Variable x:TypeArguments="x:Double" Name="SumAmount" />
       <Variable x:TypeArguments="x:Double" Name="SumDifference" />
+      <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -426,6 +427,12 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
+    <ui:PathExists DisplayName="Path Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="714.4,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path + FileName]" PathType="File" />
+    <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="714.4,209.6" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path + FileName]" />
+      </If.Then>
+    </If>
     <ui:WriteRange AddHeaders="True" DataTable="[DailyPaymentData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="714.4,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="PaymentReport" StartingCell="A1" WorkbookPath="[Path + FileName]" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delete already paid" sap:VirtualizedContainerService.HintSize="714.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="2.2_DeleteAlreadyPaid.xaml">
       <ui:InvokeWorkflowFile.Arguments>
