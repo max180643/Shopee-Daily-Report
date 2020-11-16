@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1086,2692</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1084.8,2855.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_3_1_DHLTracking_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -53,7 +53,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_3_1_DHLTracking" sap:VirtualizedContainerService.HintSize="1066,2592" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_3_1_DHLTracking" sap:VirtualizedContainerService.HintSize="1064.8,2755.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="Browser" />
       <Variable x:TypeArguments="ui:GenericValue" Name="Status" />
@@ -63,7 +63,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="1024,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="1023.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:GenericValue">[Status]</OutArgument>
       </Assign.To>
@@ -71,13 +71,13 @@
         <InArgument x:TypeArguments="ui:GenericValue">[""]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1024,2400" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[Browser]" Url="https://ecommerceportal.dhl.com/track/?locale=th_TH">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1023.2,2562.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" UiBrowser="[Browser]" Url="https://ecommerceportal.dhl.com/track/?locale=th_TH">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="990,2301" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="989.6,2462.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="NoInformation" />
             </Sequence.Variables>
@@ -86,7 +86,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'BUTTON  trackItNowForm:...'" sap:VirtualizedContainerService.HintSize="948,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'BUTTON  trackItNowForm:...'" sap:VirtualizedContainerService.HintSize="948,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="35df18d0a09c342e3e82ec410833f5b2" Selector="&lt;webctrl parentid='trackItNowForm:searchSkuBtn' tag='SPAN' /&gt;" TimeoutMS="1000">
                   <ui:Target.WaitForReady>
@@ -95,7 +95,7 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TEXTAREA  trackItNowFor...'" sap:VirtualizedContainerService.HintSize="948,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TEXTAREA  trackItNowFor...'" sap:VirtualizedContainerService.HintSize="948,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -117,7 +117,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TEXTAREA  trackItNowFor...'" sap:VirtualizedContainerService.HintSize="948,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[TrackingNumber]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'TEXTAREA  trackItNowFor...'" sap:VirtualizedContainerService.HintSize="948,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[TrackingNumber]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4cab732fcc1c4fa2e962ef4868c1b25c" Selector="&lt;webctrl id='trackItNowForm:trackItNowSearchBox' tag='TEXTAREA' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -129,7 +129,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="948,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="948,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -151,16 +151,16 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:UiElementExists DisplayName="Tracking Number not found" Exists="[NoInformation]" sap:VirtualizedContainerService.HintSize="948,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+            <ui:UiElementExists DisplayName="Tracking Number not found" Exists="[NoInformation]" sap:VirtualizedContainerService.HintSize="948,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="625a6dd81f4e63bf1d927bb7291c1907" Selector="&lt;webctrl parentid='messages' tag='DIV' /&gt;" TimeoutMS="1000">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="625a6dd81f4e63bf1d927bb7291c1907" Selector="&lt;webctrl parentid='messages' tag='DIV' /&gt;" TimeoutMS="1500">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[NoInformation]" sap:VirtualizedContainerService.HintSize="948,1243" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[NoInformation]" sap:VirtualizedContainerService.HintSize="948,1397.6" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
                 <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
@@ -172,7 +172,7 @@
                 </Assign>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="641,1096" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence sap:VirtualizedContainerService.HintSize="639.2,1248" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="getChildren" />
                   </Sequence.Variables>
@@ -181,7 +181,16 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:FindChildren Children="[getChildren]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="599,106" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'SPAN'" sap:VirtualizedContainerService.HintSize="597.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="21f256a901d9b09bb49781ed66f7fec9" Selector="&lt;webctrl parentid='trackItNowForm:emailSubscribe' tag='SPAN' /&gt;" TimeoutMS="5000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <ui:FindChildren Children="[getChildren]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="597.6,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
                     <ui:FindChildren.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e8fd4b0f7d2da3f202fd69ff79f3ad6a" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' omit:parentid='trackItNowForm:j_idt364_content' tag='DIV' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -193,13 +202,13 @@
                       </ui:Target>
                     </ui:FindChildren.Target>
                   </ui:FindChildren>
-                  <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="599,858" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[getChildren]">
+                  <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="597.6,860.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[getChildren]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="ui:UiElement">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:UiElement" Name="element" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,725" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="562.4,726.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="ui:GenericValue" Name="ClassName" />
                           </Sequence.Variables>
@@ -208,7 +217,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="class" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="521,96" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+                          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="class" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="520.8,96.8" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
                             <ui:GetAttribute.Result>
                               <OutArgument x:TypeArguments="ui:GenericValue">[ClassName]</OutArgument>
                             </ui:GetAttribute.Result>
