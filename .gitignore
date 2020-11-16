@@ -1,6 +1,7 @@
 .settings/
 .local/
 Data.csv
+DataBackup.csv
 DailyReport/
 PaymentReport/
 ArrearageReport/
