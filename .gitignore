@@ -1,5 +1,6 @@
 .settings/
 .local/
+debug.log
 Data.csv
 DataBackup.csv
 DailyReport/
